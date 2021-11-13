@@ -7,12 +7,12 @@ using UnityEngine;
 public struct BitwiseTile
 {
     public GameObject tile;
-    public int bitwiseTileIndex;
+    public int[] bitwiseTileIndexes;
 }
 
 public class MapRender : MonoBehaviour
-{    
-    [SerializeField] private GameObject unknownTile;   
+{
+    [SerializeField] private GameObject unknownTile;
     [SerializeField] private BitwiseTile[] bitwiseTiles;
 
     public void RenderMap(Tile[,] mapData)
@@ -24,42 +24,38 @@ public class MapRender : MonoBehaviour
         {
             for (int y = 0; y < mapHeight; y++)
             {
-                Tile tileData = mapData[x, y];
-                GameObject tile = unknownTile;
-
-                int tilePositionX = (int) (y - mapWidth / 2);
-                int tilePositionY = (int) (-x + mapHeight / 2);
-                //Vector3 tilePosition = new Vector3Int(y , -x , 0);
+                Tile tileData = mapData[x, y]; 
+                int tilePositionX = (int)(y - mapWidth / 2);
+                int tilePositionY = (int)(-x + mapHeight / 2);
                 Vector3 tilePosition = new Vector3Int(tilePositionX, tilePositionY, 0);
 
-                foreach (BitwiseTile bitwiseTile in bitwiseTiles)
-                {
-                    if (bitwiseTile.bitwiseTileIndex == tileData.bitwiseTileIndex)
-                    {
-                        if (bitwiseTile.tile)
-                        {
-                            tile = bitwiseTile.tile;
-                        }
-                        break;
-                    }
-                }
-
-                /*
-                if (tileData.terrainType == TerrainType.Water)
-                {
-                    tile = tileWater;
-                }
-                else if (tileData.terrainType == TerrainType.Grass)
-                {
-                    tile = tileGrass;
-                }*/
-
+                GameObject tile = GetTileObject(tileData.bitwiseTileIndex, bitwiseTiles);
                 GameObject tileGameObject = Instantiate(tile, tilePosition, Quaternion.identity, transform);
-
-                //Debug.Log(tileData.terrainType);
-
                 tileGameObject.name = $"Tile:[{x}, {y}]-[{tileData.terrainType}]-Bitwise:{tileData.bitwiseTileIndex}";
             }
         }
+    }
+
+    private GameObject GetTileObject(int tileDatatIndex, BitwiseTile[] bitwiseTiles)
+    {
+        GameObject gameObject = unknownTile;        
+
+        foreach (BitwiseTile bitwiseTile in bitwiseTiles)
+        {            
+            foreach (int bitwiseTileIndex in bitwiseTile.bitwiseTileIndexes)
+            {
+                if (tileDatatIndex == bitwiseTileIndex)
+                {
+                    gameObject = bitwiseTile.tile;
+                    break;
+                }
+            }
+            if (gameObject != unknownTile)
+            {
+                break;
+            }
+        }
+
+        return gameObject;
     }
 }

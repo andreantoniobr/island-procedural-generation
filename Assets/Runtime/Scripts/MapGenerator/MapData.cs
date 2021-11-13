@@ -15,7 +15,7 @@ public struct Tile
 
 public static class MapData
 {
-    public static Tile[,] GetMapData(int islandWidth, int islandHeight, int mapWidth, int mapHeight, int seed, int grassBorderPercent)
+    public static Tile[,] GetMapData(int islandWidth, int islandHeight, int mapWidth, int mapHeight, int mapSeed, int grassBorderPercent)
     {
         if (mapWidth < islandWidth)
         {
@@ -28,7 +28,7 @@ public static class MapData
         }
         
         Tile[,] mapData = GenerateMapData(mapWidth, mapHeight);
-        Tile[,] islandData = GenerateIslandData(islandWidth, islandHeight, seed, grassBorderPercent);        
+        Tile[,] islandData = GenerateIslandData(islandWidth, islandHeight, mapSeed, grassBorderPercent);        
         
         AddIslandDataInMapData(islandWidth, islandHeight, mapWidth, mapHeight, mapData, islandData);
         
@@ -56,10 +56,10 @@ public static class MapData
         }
     }
 
-    private static Tile[,] GenerateIslandData(int islandWidth, int islandHeight, int seed, int grassBorderPercent)
+    private static Tile[,] GenerateIslandData(int islandWidth, int islandHeight, int mapSeed, int grassBorderPercent)
     {
         Tile[,] islandData = new Tile[islandWidth, islandHeight];
-        System.Random pseudoRandom = new System.Random(seed.GetHashCode());
+        System.Random pseudoRandom = new System.Random(mapSeed.GetHashCode());
 
         for (int x = 0; x < islandWidth; x++)
         {

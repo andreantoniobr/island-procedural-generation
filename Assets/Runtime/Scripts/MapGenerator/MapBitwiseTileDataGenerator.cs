@@ -1,23 +1,5 @@
  public static class MapBitwiseTileDataGenerator
 {
-    public static void GenerateMapBitwiseTileData(Tile[,] mapData)
-    {
-        int mapWidth = mapData.GetLength(0);
-        int mapHeight = mapData.GetLength(1);
-
-        for (int x = 0; x < mapWidth; x++)
-        {
-            for (int y = 0; y < mapHeight; y++)
-            {
-                if (!IsBorder(x, y, mapWidth, mapHeight))
-                {
-                    mapData[x, y].bitwiseTileIndex = CalculateBitwiseTile(x, y, mapData);
-                }                
-            }
-        }
-    }
-
-
     /*
      * Tile Neighbors
      * 
@@ -37,6 +19,23 @@
      * [ 64][x, y][  4]
      * [ 32][  16][  8]
      */
+
+    public static void GenerateMapBitwiseTileData(Tile[,] mapData)
+    {
+        int mapWidth = mapData.GetLength(0);
+        int mapHeight = mapData.GetLength(1);
+
+        for (int x = 0; x < mapWidth; x++)
+        {
+            for (int y = 0; y < mapHeight; y++)
+            {
+                if (!IsBorder(x, y, mapWidth, mapHeight))
+                {
+                    mapData[x, y].bitwiseTileIndex = CalculateBitwiseTile(x, y, mapData);
+                }                
+            }
+        }
+    }
 
     private static int CalculateBitwiseTile(int tileX, int tileY, Tile[,] mapData)
     {
@@ -112,7 +111,6 @@
                 northWest = 1;
             }
         }
-     
 
         int bitwiseTile = north + northEast * 2 + east * 4 + southEast * 8 + south * 16 + southWest * 32 + west * 64 + northWest * 128;
 
@@ -126,6 +124,7 @@
         {
             isGrass = true;
         }
+
         return isGrass;
     }
 
@@ -136,6 +135,7 @@
         {
             isBorder = true;
         }
+
         return isBorder;
     }
 }

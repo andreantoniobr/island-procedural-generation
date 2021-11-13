@@ -9,27 +9,20 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int mapHeight;
 
     [Header("Seed")]
-    [SerializeField] private bool isRandomSeed;
-    [SerializeField] private int seed;
+    [SerializeField] private int mapSeed;
 
     [Header("Island Properties")]
     [SerializeField] private int islandWidth;
     [SerializeField] private int islandHeight;
     [Range(0, 100)]
-    [SerializeField] private int grassBorderPercent;
-    
+    [SerializeField] private int grassBorderPercent;    
 
     private void Awake()
     {
-        if (isRandomSeed)
-        {
-            seed = GenerateRandomSeed();
-        }
+        //Get Map Data
+        Tile[,] mapData = MapData.GetMapData(islandWidth, islandHeight, mapWidth, mapHeight, mapSeed, grassBorderPercent);
 
-        //Generate Map Data
-        Tile[,] mapData = MapData.GetMapData(islandWidth, islandHeight, mapWidth, mapHeight, seed, grassBorderPercent);
-
-        //GenerateBitwiseTileData
+        //Generate Map BitwiseTile Data
         MapBitwiseTileDataGenerator.GenerateMapBitwiseTileData(mapData);
 
         //Render Map Data
@@ -38,12 +31,5 @@ public class MapGenerator : MonoBehaviour
         {
             mapRender.RenderMap(mapData);
         }
-
-        
-    }
-    
-    private int GenerateRandomSeed()
-    {        
-        return Time.time.ToString().GetHashCode();
     }
 }
