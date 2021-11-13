@@ -1,100 +1,116 @@
-using UnityEngine;
-
 public enum TerrainType
 {
     Unknown = -1,
+    Water,
     Grass,
     Dirt,
-    Sand,
-    Water
+    Sand,    
 }
 
 public struct Tile
 {
-    public Vector2 position;
     public TerrainType terrainType;
+    public int bitwiseTileIndex;
 }
 
 public static class MapData
 {
-    public static Tile[] GenerateMapData(int islandWidth, int islandHeight, int mapWidth, int mapHeight, int seed, int grassBorderPercent)
+    public static Tile[,] GetMapData(int islandWidth, int islandHeight, int mapWidth, int mapHeight, int seed, int grassBorderPercent)
     {
-        if (islandWidth > mapWidth)
+        if (mapWidth < islandWidth)
         {
             mapWidth = islandWidth;
         }
-
-        if (islandHeight > mapHeight)
+        
+        if (mapHeight < islandHeight)
         {
             mapHeight = islandHeight;
         }
+        
+        Tile[,] mapData = GenerateMapData(mapWidth, mapHeight);
+        Tile[,] islandData = GenerateIslandData(islandWidth, islandHeight, seed, grassBorderPercent);        
+        
+        AddIslandDataInMapData(islandWidth, islandHeight, mapWidth, mapHeight, mapData, islandData);
+        
+        return mapData;
+    }
 
-        Tile[] mapData = new Tile[mapWidth * mapHeight];
+    private static Tile[,] GenerateMapData(int mapWidth, int mapHeight)
+    {
+        Tile[,] mapData = new Tile[mapWidth, mapHeight];
+        FillWaterMapData(mapWidth, mapHeight, mapData);
+        return mapData;
+    }
 
-        Tile[] islandTiles = GenerateIsland(islandWidth, islandHeight, seed, grassBorderPercent);
-
-        /*
+    private static void FillWaterMapData(int mapWidth, int mapHeight, Tile[,] mapData)
+    {
         for (int x = 0; x < mapWidth; x++)
         {
             for (int y = 0; y < mapHeight; y++)
             {
-
+                if (mapData[x, y].terrainType != TerrainType.Water)
+                {
+                    mapData[x, y].terrainType = TerrainType.Water;
+                }
             }
-
         }
-        */
-
-        int tilesToBorder = (mapWidth - islandWidth) / 2;
-
-        for (int i = 0; i < islandTiles.Length; i++)
-        {
-            Tile islandTile = islandTiles[i];
-        }
-
-        return mapData;
     }
 
-    private static Tile[] GenerateIsland(int islandWidth, int islandHeight, int seed, int grassBorderPercent)
+    private static Tile[,] GenerateIslandData(int islandWidth, int islandHeight, int seed, int grassBorderPercent)
     {
-        Tile[] islandData = new Tile[islandWidth * islandHeight];
+        Tile[,] islandData = new Tile[islandWidth, islandHeight];
+        System.Random pseudoRandom = new System.Random(seed.GetHashCode());
+
         for (int x = 0; x < islandWidth; x++)
         {
             for (int y = 0; y < islandHeight; y++)
             {
-                int index = x + (y * islandWidth);
-                islandData[index] = GenerateRandomIslandTile(x, y, islandWidth, islandHeight, seed, grassBorderPercent);
+                Tile tile = GenerateRandomIslandTile(x, y, islandWidth, islandHeight, grassBorderPercent, pseudoRandom); ;
+                if (tile.terrainType != TerrainType.Unknown)
+                {
+                    islandData[x, y] = tile;
+                }                    
             }
         }
         return islandData;
     }
 
-    private static Tile GenerateRandomIslandTile(int x, int y, int width, int height, int seed, int grassBorderPercent)
+    private static Tile GenerateRandomIslandTile(int x, int y, int islandWidth, int islandHeight, int grassBorderPercent, System.Random pseudoRandom)
     {
-        Tile tile;
-        tile.position.x = x;
-        tile.position.y = y;
-        tile.terrainType = TerrainType.Grass;
-
-        if (IsBorder(x, y, width, height))
+        Tile tile = new Tile
         {
-            System.Random pseudoRandom = new System.Random(seed.GetHashCode());
-            if (pseudoRandom.Next(0, 100) < grassBorderPercent)
+            terrainType = TerrainType.Grass,
+        };
+
+        if (IsBorder(x, y, islandWidth, islandHeight))
+        {            
+            int tilePercent = pseudoRandom.Next(0, 100);
+            if (grassBorderPercent < tilePercent)
             {
-                tile.terrainType = TerrainType.Water;
+                tile.terrainType = TerrainType.Unknown;
             }
         }
-        
         return tile;
     }
 
-    /*
-    Ex. Island 5 x 5:
-    [0,0] [0,1] [0,2] [0,3] [0,4]
-    [1,0] [1,1] [1,2] [1,3] [1,4]
-    [2,0] [2,1] [2,2] [2,3] [2,4]
-    [3,0] [3,1] [3,2] [3,3] [3,4]
-    [4,0] [4,1] [4,2] [4,3] [4,4]
-    */
+    private static void AddIslandDataInMapData(int islandWidth, int islandHeight, int mapWidth, int mapHeight, Tile[,] mapData, Tile[,] islandTiles)
+    {
+        //Calculate Border Map
+        int tilesToBorder = (mapWidth - islandWidth) / 2;
+        for (int x = 0; x < islandWidth; x++)
+        {
+            for (int y = 0; y < islandHeight; y++)
+            {
+                int mapX = x + tilesToBorder;
+                int mapY = y + tilesToBorder;
+                if (mapX >= 0 && mapX < mapWidth && mapY >= 0 && mapY < mapHeight)
+                {
+                    mapData[mapX, mapY] = islandTiles[x, y];
+                }
+            }
+        }
+    }
+
     private static bool IsBorder(int x, int y, int width, int height)
     {
         bool isBorder = false;
@@ -104,7 +120,4 @@ public static class MapData
         }
         return isBorder;
     }
-
-    
-
 }

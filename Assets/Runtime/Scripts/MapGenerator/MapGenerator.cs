@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    
-
     [SerializeField] private int mapWidth;
     [SerializeField] private int mapHeight;
 
@@ -19,22 +17,31 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int islandHeight;
     [Range(0, 100)]
     [SerializeField] private int grassBorderPercent;
+    
 
-    private void Start()
+    private void Awake()
     {
         if (isRandomSeed)
         {
             seed = GenerateRandomSeed();
         }
 
-        GenerateMap();
-    }
+        //Generate Map Data
+        Tile[,] mapData = MapData.GetMapData(islandWidth, islandHeight, mapWidth, mapHeight, seed, grassBorderPercent);
 
-    private void GenerateMap()
-    {
-        Tile[] map = MapData.GenerateMapData(islandWidth, islandHeight, mapWidth, mapHeight, seed, grassBorderPercent);
-    }
+        //GenerateBitwiseTileData
+        MapBitwiseTileDataGenerator.GenerateMapBitwiseTileData(mapData);
 
+        //Render Map Data
+        MapRender mapRender = GetComponent<MapRender>();
+        if (mapRender)
+        {
+            mapRender.RenderMap(mapData);
+        }
+
+        
+    }
+    
     private int GenerateRandomSeed()
     {        
         return Time.time.ToString().GetHashCode();

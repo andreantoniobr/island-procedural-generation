@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -149,6 +150,26 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 16
+  m_RefResolutionX: 640
+  m_RefResolutionY: 360
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -216,6 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008718144}
   - component: {fileID: 2008718145}
+  - component: {fileID: 2008718146}
   m_Layer: 0
   m_Name: MapGenerator
   m_TagString: Untagged
@@ -249,10 +271,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cddcb488f872aab49a87bc0f57351b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapWidth: 0
-  mapHeight: 0
-  isRandomSeed: 1
+  mapWidth: 5
+  mapHeight: 5
+  isRandomSeed: 0
   seed: 0
-  islandWidth: 0
-  islandHeight: 0
-  grassBorderPercent: 0
+  islandWidth: 3
+  islandHeight: 3
+  grassBorderPercent: 100
+--- !u!114 &2008718146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008718143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a301eab46d5bd140958e432cdf118ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unknownTile: {fileID: 3090983312458457553, guid: 0c88d3b9664020a4190f3780b85e5899, type: 3}
+  bitwiseTiles:
+  - tile: {fileID: 3090983312458457553, guid: 9d1ea2db06895c14e88dca56191338d2, type: 3}
+    bitwiseTileIndex: 0
+  - tile: {fileID: 3090983312458457553, guid: f00c33fc555d0f14bab807af83bfc17e, type: 3}
+    bitwiseTileIndex: 255
+  - tile: {fileID: 3090983312458457553, guid: 2c14fe567934beb46b7bce44b441a4da, type: 3}
+    bitwiseTileIndex: 28
+  - tile: {fileID: 3090983312458457553, guid: fc42359c97b639a42b90468a5932de73, type: 3}
+    bitwiseTileIndex: 112
+  - tile: {fileID: 3090983312458457553, guid: ad53babe7f3e2ff47b3bc8e767c41318, type: 3}
+    bitwiseTileIndex: 124
