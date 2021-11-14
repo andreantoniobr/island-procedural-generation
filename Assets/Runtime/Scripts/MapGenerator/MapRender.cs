@@ -39,7 +39,20 @@ public class MapRender : MonoBehaviour
         if (tile)
         {
             GameObject tileGameObject = Instantiate(tile, tilePosition, Quaternion.identity, transform);
+            ActivateWaterCollider(tileData, tileGameObject);
             tileGameObject.name = $"Tile:[{x}, {y}]-[{tileData.TerrainType}]-Bitwise:{tileData.BitwiseTileIndex}";
+        }
+    }
+
+    private void ActivateWaterCollider(Tile tileData, GameObject tileGameObject)
+    {
+        if (tileData.IsColliderEnabled == true)
+        {
+            TileObject tileObject = tileGameObject.GetComponent<TileObject>();
+            if (tileObject)
+            {
+                tileObject.ActiveCollider2D();
+            }
         }
     }
 

@@ -271,8 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cddcb488f872aab49a87bc0f57351b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapWidth: 18
-  mapHeight: 18
+  mapWidth: 30
+  mapHeight: 30
   mapSeed: 4
   islandWidth: 12
   islandHeight: 12

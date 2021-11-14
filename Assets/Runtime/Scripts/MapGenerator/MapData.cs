@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public enum TerrainType
 {
     Unknown = -1,
@@ -145,9 +147,9 @@ public static class MapData
     private static int CountNeighbors(int tileX, int tileY, Tile[,] mapData, TerrainType terrainType)
     {
         int neighbors = 0;
-        for (int x = tileX - 1; x < tileX + 1; x++)
+        for (int x = tileX - 1; x <= tileX + 1; x++)
         {
-            for (int y = tileY - 1; y < tileY + 1; y++)
+            for (int y = tileY - 1; y <= tileY + 1; y++)
             {
                 if (mapData[x, y].TerrainType == terrainType)
                 {
