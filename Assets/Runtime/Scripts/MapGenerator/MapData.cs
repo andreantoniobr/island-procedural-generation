@@ -9,8 +9,9 @@ public enum TerrainType
 
 public struct Tile
 {
-    public TerrainType terrainType;
-    public int bitwiseTileIndex;
+    public TerrainType TerrainType;
+    public int BitwiseTileIndex;
+    public bool IsColliderEnabled;
 }
 
 public static class MapData
@@ -31,7 +32,9 @@ public static class MapData
         Tile[,] islandData = GenerateIslandData(islandWidth, islandHeight, mapSeed, grassBorderPercent);        
         
         AddIslandDataInMapData(islandWidth, islandHeight, mapWidth, mapHeight, mapData, islandData);
-        
+        ActiveWaterColliders(mapWidth, mapHeight, mapData);
+
+
         return mapData;
     }
 
@@ -48,9 +51,10 @@ public static class MapData
         {
             for (int y = 0; y < mapHeight; y++)
             {
-                if (mapData[x, y].terrainType != TerrainType.Water)
+                if (mapData[x, y].TerrainType != TerrainType.Water)
                 {
-                    mapData[x, y].terrainType = TerrainType.Water;
+                    mapData[x, y].TerrainType = TerrainType.Water;
+                    mapData[x, y].IsColliderEnabled = false;
                 }
             }
         }
@@ -66,7 +70,7 @@ public static class MapData
             for (int y = 0; y < islandHeight; y++)
             {
                 Tile tile = GenerateRandomIslandTile(x, y, islandWidth, islandHeight, grassBorderPercent, pseudoRandom); ;
-                if (tile.terrainType != TerrainType.Unknown)
+                if (tile.TerrainType != TerrainType.Unknown)
                 {
                     islandData[x, y] = tile;
                 }                    
@@ -79,7 +83,7 @@ public static class MapData
     {
         Tile tile = new Tile
         {
-            terrainType = TerrainType.Grass,
+            TerrainType = TerrainType.Grass,
         };
 
         if (IsBorder(x, y, islandWidth, islandHeight))
@@ -87,7 +91,7 @@ public static class MapData
             int tilePercent = pseudoRandom.Next(0, 100);
             if (grassBorderPercent < tilePercent)
             {
-                tile.terrainType = TerrainType.Unknown;
+                tile.TerrainType = TerrainType.Unknown;
             }
         }
         return tile;
@@ -119,5 +123,39 @@ public static class MapData
             isBorder = true;
         }
         return isBorder;
+    }
+
+    private static void ActiveWaterColliders(int mapWidth, int mapHeight, Tile[,] mapData)
+    {
+        for (int x = 0; x < mapWidth; x++)
+        {
+            for (int y = 0; y < mapHeight; y++)
+            {
+                if (!IsBorder(x, y, mapWidth, mapHeight) && mapData[x, y].TerrainType == TerrainType.Water)
+                {
+                    if (CountNeighbors(x, y, mapData, TerrainType.Grass) > 0)
+                    {
+                        mapData[x, y].IsColliderEnabled = true;
+                    }
+                }
+            }
+        }
+    }
+
+    private static int CountNeighbors(int tileX, int tileY, Tile[,] mapData, TerrainType terrainType)
+    {
+        int neighbors = 0;
+        for (int x = tileX - 1; x < tileX + 1; x++)
+        {
+            for (int y = tileY - 1; y < tileY + 1; y++)
+            {
+                if (mapData[x, y].TerrainType == terrainType)
+                {
+                    neighbors++;
+                }
+            }
+        }
+
+        return neighbors;
     }
 }

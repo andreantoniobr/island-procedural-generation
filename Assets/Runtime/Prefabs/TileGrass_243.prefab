@@ -9,12 +9,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8990691377103701953, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
       propertyPath: m_Name
-      value: TileGrass_243
+      value: TileGrass_243 nao achei
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990691377103701966, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990691377103701966, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 8990691377103701966, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5304738838090765386, guid: ddc6b246c5f72814f8a33cc5ff53d1a3, type: 3}
+      objectReference: {fileID: 5856588976580930198, guid: d5669ceb44c44e840b10f13636390748, type: 3}
     - target: {fileID: 8990691377103701966, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

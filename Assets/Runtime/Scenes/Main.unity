@@ -273,10 +273,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapWidth: 18
   mapHeight: 18
-  mapSeed: 0
-  islandWidth: 16
-  islandHeight: 16
-  grassBorderPercent: 61
+  mapSeed: 4
+  islandWidth: 12
+  islandHeight: 12
+  grassBorderPercent: 50
 --- !u!114 &2008718146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,38 +293,76 @@ MonoBehaviour:
   bitwiseTiles:
   - tile: {fileID: 3090983312458457553, guid: 9d1ea2db06895c14e88dca56191338d2, type: 3}
     bitwiseTileIndexes: 00000000
+  - tile: {fileID: 3090983312458457553, guid: 1f56f332e6952a24da02e79a24da731a, type: 3}
+    bitwiseTileIndexes: e8030000
+  - tile: {fileID: 3090983312458457553, guid: b43ea96822bbc7c4a9759b5dc6fae88b, type: 3}
+    bitwiseTileIndexes: b80b0000
+  - tile: {fileID: 3090983312458457553, guid: 709566d02e9e8cf45a5754f1ee1be5d2, type: 3}
+    bitwiseTileIndexes: e8f70100
+  - tile: {fileID: 3090983312458457553, guid: 1ed2bdc196d06534799dcd96e8ab294b, type: 3}
+    bitwiseTileIndexes: b8ff0100
   - tile: {fileID: 3090983312458457553, guid: 9c200931086fdd84db95428bb144e3e5, type: 3}
-    bitwiseTileIndexes: 01000000030000008100000083000000
+    bitwiseTileIndexes: 0100000081000000
+  - tile: {fileID: 3090983312458457553, guid: 3de668290f2aeff409bb85cddf50ee9a, type: 3}
+    bitwiseTileIndexes: 03000000
+  - tile: {fileID: 3090983312458457553, guid: 9abb77e3250cb284f8e89295b9f91076, type: 3}
+    bitwiseTileIndexes: 050000000d000000
+  - tile: {fileID: 3090983312458457553, guid: ff84bdef555629849b2a4e2ba9b258f3, type: 3}
+    bitwiseTileIndexes: 02000000080000002000000080000000
   - tile: {fileID: 3090983312458457553, guid: 808197ac6a566494ba56b433868aaa2a, type: 3}
     bitwiseTileIndexes: 04000000060000000c0000000e000000
   - tile: {fileID: 3090983312458457553, guid: 9f482fea9d1566b4c89902871847909c, type: 3}
-    bitwiseTileIndexes: 070000000f00000087000000
+    bitwiseTileIndexes: 070000000f000000a7000000
   - tile: {fileID: 3090983312458457553, guid: 0d6173a80eb793142911540800fa6124, type: 3}
     bitwiseTileIndexes: 10000000180000003000000038000000
+  - tile: {fileID: 3090983312458457553, guid: 1806d491f4618eb45a6daaf95b117235, type: 3}
+    bitwiseTileIndexes: 140000001600000034000000
+  - tile: {fileID: 3090983312458457553, guid: 2f262883efa3a1b4dab5a8a09efa4722, type: 3}
+    bitwiseTileIndexes: 17000000
   - tile: {fileID: 3090983312458457553, guid: 2c14fe567934beb46b7bce44b441a4da, type: 3}
-    bitwiseTileIndexes: 1c0000001e0000003c000000
+    bitwiseTileIndexes: 1c0000001e0000003c000000bc000000
   - tile: {fileID: 3090983312458457553, guid: b511ab5bd59f4c74bb4e7684cbd81122, type: 3}
     bitwiseTileIndexes: 1f0000003f000000
   - tile: {fileID: 3090983312458457553, guid: 28957a73225e51b4dac1190acc6eab25, type: 3}
     bitwiseTileIndexes: 20000000
   - tile: {fileID: 3090983312458457553, guid: 7b399c78fbb7f354cbce54be1521e94d, type: 3}
     bitwiseTileIndexes: 4000000060000000c0000000e0000000
+  - tile: {fileID: 3090983312458457553, guid: b2b56a7ceb858c04db8060521950c664, type: 3}
+    bitwiseTileIndexes: 4700000067000000
+  - tile: {fileID: 3090983312458457553, guid: 075777f52ffbdae4c845a9691b39ff8d, type: 3}
+    bitwiseTileIndexes: 5c000000de000000
+  - tile: {fileID: 3090983312458457553, guid: 548b5e3acc2e68e4784e31c4977abc66, type: 3}
+    bitwiseTileIndexes: 5f000000
   - tile: {fileID: 3090983312458457553, guid: fc42359c97b639a42b90468a5932de73, type: 3}
     bitwiseTileIndexes: 7000000078000000f0000000fa000000
+  - tile: {fileID: 3090983312458457553, guid: ff37fcdac00a14a438b2f7558ba6030f, type: 3}
+    bitwiseTileIndexes: 71000000
+  - tile: {fileID: 3090983312458457553, guid: c5f1b6de94abce84ab4c6ea754ff6ff7, type: 3}
+    bitwiseTileIndexes: 73000000
+  - tile: {fileID: 3090983312458457553, guid: ab12162d2c4401b4ea0252a5f45f7347, type: 3}
+    bitwiseTileIndexes: 74000000
   - tile: {fileID: 3090983312458457553, guid: ad53babe7f3e2ff47b3bc8e767c41318, type: 3}
-    bitwiseTileIndexes: 7c0000007e000000fe000000
+    bitwiseTileIndexes: 7c0000007e000000fc000000fe000000
   - tile: {fileID: 3090983312458457553, guid: 0bc2a4ebd7aff89489027eb72ec33dea, type: 3}
     bitwiseTileIndexes: 7d000000
+  - tile: {fileID: 3090983312458457553, guid: 2bd06003e5337c44aa0ee5076b6c3170, type: 3}
+    bitwiseTileIndexes: 83000000
   - tile: {fileID: 3090983312458457553, guid: b598ff036ed5228498a72d12d7f84f07, type: 3}
     bitwiseTileIndexes: 7f000000
-  - tile: {fileID: 3090983312458457553, guid: d961c51ddbe001742bc004c248f23fe2, type: 3}
-    bitwiseTileIndexes: bf000000
+  - tile: {fileID: 3090983312458457553, guid: 5af4f4ce34ad19e44af3032e92ea5e3e, type: 3}
+    bitwiseTileIndexes: 87000000
+  - tile: {fileID: 3090983312458457553, guid: 37be4302726b480428ef9afde83fcbf9, type: 3}
+    bitwiseTileIndexes: 9f000000bf000000
   - tile: {fileID: 3090983312458457553, guid: 7684fa63bce854241a484169ac932dce, type: 3}
-    bitwiseTileIndexes: c1000000c3000000e1000000
+    bitwiseTileIndexes: c1000000c9000000e1000000
+  - tile: {fileID: 3090983312458457553, guid: 3a69bcba41188f44786239b6dbcc96ef, type: 3}
+    bitwiseTileIndexes: c3000000
   - tile: {fileID: 3090983312458457553, guid: 90ffcda22eff2c6478af2abfb8faea41, type: 3}
     bitwiseTileIndexes: c5000000
   - tile: {fileID: 3090983312458457553, guid: bbdc37eb1ba3cfb449a8b765a05d928a, type: 3}
     bitwiseTileIndexes: c7000000cf000000e7000000ef000000
+  - tile: {fileID: 3090983312458457553, guid: 4d20b048fe1f1874d9a17d6bf81846b9, type: 3}
+    bitwiseTileIndexes: d7000000
   - tile: {fileID: 3090983312458457553, guid: c26ec8c9cb92e44418c3904129ca57dc, type: 3}
     bitwiseTileIndexes: df000000
   - tile: {fileID: 3090983312458457553, guid: 8c9c9428a00b9fa419a51a57dde39700, type: 3}

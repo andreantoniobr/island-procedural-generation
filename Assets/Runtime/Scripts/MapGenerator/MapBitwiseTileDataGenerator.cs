@@ -31,7 +31,7 @@
             {
                 if (!IsBorder(x, y, mapWidth, mapHeight))
                 {
-                    mapData[x, y].bitwiseTileIndex = CalculateBitwiseTile(x, y, mapData);
+                    mapData[x, y].BitwiseTileIndex = CalculateBitwiseTile(x, y, mapData);
                 }                
             }
         }
@@ -112,6 +112,22 @@
             }
         }
 
+        if (IsWater(mapData[tileX, tileY]) && IsGrass(mapData[tileX - 1, tileY]))
+        {
+            if (IsGrass(mapData[tileX - 1, tileY]))
+            {
+                north = 1000;
+            }
+            if (IsGrass(mapData[tileX - 1, tileY + 1]))
+            {
+                northEast = 1000;
+            }
+            if (IsGrass(mapData[tileX - 1, tileY - 1]))
+            {
+                northWest = 1000;
+            }
+        }
+
         int bitwiseTile = north + northEast * 2 + east * 4 + southEast * 8 + south * 16 + southWest * 32 + west * 64 + northWest * 128;
 
         return bitwiseTile;
@@ -119,13 +135,23 @@
 
     private static bool IsGrass(Tile tile)
     {
-        bool isGrass = false;
-        if (tile.terrainType == TerrainType.Grass)
+        return IsTerrainType(tile, TerrainType.Grass);
+    }
+
+    private static bool IsWater(Tile tile)
+    {
+        return IsTerrainType(tile, TerrainType.Water);
+    }
+
+    private static bool IsTerrainType(Tile tile, TerrainType terrainType)
+    {
+        bool isTerrainType = false;
+        if (tile.TerrainType == terrainType)
         {
-            isGrass = true;
+            isTerrainType = true;
         }
 
-        return isGrass;
+        return isTerrainType;
     }
 
     private static bool IsBorder(int x, int y, int width, int height)

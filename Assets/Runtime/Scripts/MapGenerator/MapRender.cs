@@ -24,15 +24,22 @@ public class MapRender : MonoBehaviour
         {
             for (int y = 0; y < mapHeight; y++)
             {
-                Tile tileData = mapData[x, y]; 
+                Tile tileData = mapData[x, y];
                 int tilePositionX = (int)(y - mapWidth / 2);
                 int tilePositionY = (int)(-x + mapHeight / 2);
                 Vector3 tilePosition = new Vector3Int(tilePositionX, tilePositionY, 0);
-
-                GameObject tile = GetTileObject(tileData.bitwiseTileIndex, bitwiseTiles);
-                GameObject tileGameObject = Instantiate(tile, tilePosition, Quaternion.identity, transform);
-                tileGameObject.name = $"Tile:[{x}, {y}]-[{tileData.terrainType}]-Bitwise:{tileData.bitwiseTileIndex}";
+                InstantiateTile(x, y, tileData, tilePosition);
             }
+        }
+    }
+
+    private void InstantiateTile(int x, int y, Tile tileData, Vector3 tilePosition)
+    {
+        GameObject tile = GetTileObject(tileData.BitwiseTileIndex, bitwiseTiles);
+        if (tile)
+        {
+            GameObject tileGameObject = Instantiate(tile, tilePosition, Quaternion.identity, transform);
+            tileGameObject.name = $"Tile:[{x}, {y}]-[{tileData.TerrainType}]-Bitwise:{tileData.BitwiseTileIndex}";
         }
     }
 
