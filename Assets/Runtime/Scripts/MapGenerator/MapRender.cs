@@ -29,7 +29,17 @@ public class MapRender : MonoBehaviour
                 int tilePositionY = (int)(-x + mapHeight / 2);
                 Vector3 tilePosition = new Vector3Int(tilePositionX, tilePositionY, 0);
                 InstantiateTile(x, y, tileData, tilePosition);
+                InstantiateResources(tileData, tilePosition);
             }
+        }
+    }
+
+    private void InstantiateResources(Tile tileData, Vector3 tilePosition)
+    {
+        GameObject resource = tileData.resource;
+        if (resource)
+        {
+            Instantiate(resource, tilePosition, Quaternion.identity, transform);
         }
     }
 

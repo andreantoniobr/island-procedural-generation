@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 3432227359
+    locked: 0
+  - name: Resources
+    uniqueID: 3394373883
+    locked: 0
+  - name: Player
+    uniqueID: 3133251777
+    locked: 0
+  - name: TopResources
+    uniqueID: 36773215
+    locked: 0

@@ -25,6 +25,14 @@ public class MapGenerator : MonoBehaviour
         //Generate Map BitwiseTile Data
         MapBitwiseTileDataGenerator.GenerateMapBitwiseTileData(mapData);
 
+        //Generate Map Resources
+        MapResourceGenerator mapResourceGenerator = GetComponent<MapResourceGenerator>();
+        
+        if (mapResourceGenerator)
+        {
+            mapData = mapResourceGenerator.GenerateResources(mapData, mapSeed);
+        }
+
         //Render Map Data
         MapRender mapRender = GetComponent<MapRender>();
         if (mapRender)

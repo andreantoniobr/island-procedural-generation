@@ -14,6 +14,7 @@ public struct Tile
     public TerrainType TerrainType;
     public int BitwiseTileIndex;
     public bool IsColliderEnabled;
+    public GameObject resource;
 }
 
 public static class MapData

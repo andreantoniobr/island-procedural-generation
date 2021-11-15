@@ -237,6 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008718144}
   - component: {fileID: 2008718145}
+  - component: {fileID: 2008718147}
   - component: {fileID: 2008718146}
   m_Layer: 0
   m_Name: MapGenerator
@@ -323,8 +324,6 @@ MonoBehaviour:
     bitwiseTileIndexes: 1c0000001e0000003c000000bc000000
   - tile: {fileID: 3090983312458457553, guid: b511ab5bd59f4c74bb4e7684cbd81122, type: 3}
     bitwiseTileIndexes: 1f0000003f000000
-  - tile: {fileID: 3090983312458457553, guid: 28957a73225e51b4dac1190acc6eab25, type: 3}
-    bitwiseTileIndexes: 20000000
   - tile: {fileID: 3090983312458457553, guid: 7b399c78fbb7f354cbce54be1521e94d, type: 3}
     bitwiseTileIndexes: 4000000060000000c0000000e0000000
   - tile: {fileID: 3090983312458457553, guid: b2b56a7ceb858c04db8060521950c664, type: 3}
@@ -377,3 +376,79 @@ MonoBehaviour:
     bitwiseTileIndexes: fd000000
   - tile: {fileID: 3090983312458457553, guid: f00c33fc555d0f14bab807af83bfc17e, type: 3}
     bitwiseTileIndexes: ff000000
+--- !u!114 &2008718147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008718143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee8431e72eba0645b25654ade166d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources:
+  - resource: {fileID: 4607107672515160505, guid: f8c33fe4fd0293e4eb1c1be219faabf0, type: 3}
+    resourcePercent: 1
+  - resource: {fileID: 4607107672515160505, guid: 59114ce08cf45bf46897ccaec330cd21, type: 3}
+    resourcePercent: 2
+  - resource: {fileID: 4607107672515160505, guid: d7b4f602a2b1f6240b8dc44bf0fd9d91, type: 3}
+    resourcePercent: 3
+  - resource: {fileID: 4607107672515160505, guid: 310900c1cb9c7ed43a4c06c353691d1f, type: 3}
+    resourcePercent: 4
+  - resource: {fileID: 4607107672515160505, guid: f11f346a481667043b9a84300aad9ab7, type: 3}
+    resourcePercent: 5
+  - resource: {fileID: 4607107672515160505, guid: 11b19b0ac4e8c874ba2bfecb14518537, type: 3}
+    resourcePercent: 6
+  - resource: {fileID: 4607107672515160505, guid: 0332a20099340dd49a816e1240f188ab, type: 3}
+    resourcePercent: 14
+  - resource: {fileID: 4607107672515160505, guid: b5061fb2661027748a148bb35cee5b1e, type: 3}
+    resourcePercent: 16
+  - resource: {fileID: 4607107672515160505, guid: b1cc3dcdb867bd7408dcfdd282bdaed4, type: 3}
+    resourcePercent: 18
+  - resource: {fileID: 4607107672515160505, guid: ea2f72dcbb76396469a35b466ba43969, type: 3}
+    resourcePercent: 20
+  - resource: {fileID: 4607107672515160505, guid: 3f8eae20db8e87c41bb30c7e85660f76, type: 3}
+    resourcePercent: 22
+  - resource: {fileID: 4607107672515160505, guid: c505a499246c42145b86b048e46e7d7c, type: 3}
+    resourcePercent: 24
+  - resource: {fileID: 4607107672515160505, guid: 323b07813682153458c120b9428110b1, type: 3}
+    resourcePercent: 26
+  - resource: {fileID: 4607107672515160505, guid: 69d9b0bd2c666544aba87e959c8e346a, type: 3}
+    resourcePercent: 28
+  - resource: {fileID: 4607107672515160505, guid: 33fbc4c7f604faf4c82f67ba0f51d890, type: 3}
+    resourcePercent: 30
+  - resource: {fileID: 4607107672515160505, guid: 416f0553807e7b74d845754d27b5281c, type: 3}
+    resourcePercent: 32
+  - resource: {fileID: 4607107672515160505, guid: 92382214a7492a744951255f334603d4, type: 3}
+    resourcePercent: 34
+  - resource: {fileID: 4607107672515160505, guid: 6fad0e421e2445d46ad3875d58f15519, type: 3}
+    resourcePercent: 36
+  - resource: {fileID: 4607107672515160505, guid: 78a9760aa9c7489439460a13e5a042fd, type: 3}
+    resourcePercent: 38
+  - resource: {fileID: 4607107672515160505, guid: 416e8cfd0be74524e83211c9e9d0037f, type: 3}
+    resourcePercent: 40
+  - resource: {fileID: 4607107672515160505, guid: 77cf2381216f3984b8480c7bba9a1ec7, type: 3}
+    resourcePercent: 41
+  - resource: {fileID: 4607107672515160505, guid: f99147ca335f02d41bfb1fb3fa5de4c0, type: 3}
+    resourcePercent: 42
+  - resource: {fileID: 4607107672515160505, guid: 86b2c0036560cdf43b96d57fe1811f17, type: 3}
+    resourcePercent: 43
+  - resource: {fileID: 4607107672515160505, guid: 94977c17e4cc8b743aa5a6396f23a038, type: 3}
+    resourcePercent: 44
+  - resource: {fileID: 4607107672515160505, guid: b56642ea10c4e9742838d9a86a9df871, type: 3}
+    resourcePercent: 45
+  - resource: {fileID: 4607107672515160505, guid: a7b0f9236efd3f542b087d89bccd0118, type: 3}
+    resourcePercent: 46
+  - resource: {fileID: 4607107672515160505, guid: 750aec7d5234ad94ab31a88f3c120a98, type: 3}
+    resourcePercent: 47
+  - resource: {fileID: 4607107672515160505, guid: a828917bbe3c14447a23a22d5ae8312a, type: 3}
+    resourcePercent: 48
+  - resource: {fileID: 1231033450923779354, guid: ffc5c7c1c07ad8a4ead31239b6316054, type: 3}
+    resourcePercent: 50
+  - resource: {fileID: 1231033450923779354, guid: 1626a0e3de03f9d4ab07292dc850d5a4, type: 3}
+    resourcePercent: 52
+  - resource: {fileID: 1231033450923779354, guid: 6391556b933385741b8011eb7d2d0d4f, type: 3}
+    resourcePercent: 54
+  waterResources: []
