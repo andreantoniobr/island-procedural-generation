@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &-753749687906075345
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090983312458457553}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31fd663fe098cf14db3a51b494834b39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6206025011955770896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,12 +28,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8990691377103701953, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
       propertyPath: m_Name
-      value: TileGrass_131
+      value: TileWaterAnimated_1000
       objectReference: {fileID: 0}
     - target: {fileID: 8990691377103701966, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4996297571630731055, guid: 2a25e0b14dee4bd4ea2f21072553da88, type: 3}
+      objectReference: {fileID: 5499650197901549938, guid: 2a25e0b14dee4bd4ea2f21072553da88, type: 3}
     - target: {fileID: 8990691377103701966, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -65,3 +84,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
+--- !u!1 &3090983312458457553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8990691377103701953, guid: 621efa96ed406d545a9a56aa84ee8158, type: 3}
+  m_PrefabInstance: {fileID: 6206025011955770896}
+  m_PrefabAsset: {fileID: 0}

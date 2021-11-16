@@ -428,13 +428,13 @@ MonoBehaviour:
   bitwiseTiles:
   - tile: {fileID: 3090983312458457553, guid: 9d1ea2db06895c14e88dca56191338d2, type: 3}
     bitwiseTileIndexes: 00000000
-  - tile: {fileID: 3090983312458457553, guid: 1f56f332e6952a24da02e79a24da731a, type: 3}
+  - tile: {fileID: 3090983312458457553, guid: 015c9b83653190241a144c2554b9f557, type: 3}
     bitwiseTileIndexes: e8030000
-  - tile: {fileID: 3090983312458457553, guid: b43ea96822bbc7c4a9759b5dc6fae88b, type: 3}
+  - tile: {fileID: 3090983312458457553, guid: 30a0af8432d352546a0ea62766405c64, type: 3}
     bitwiseTileIndexes: b80b0000
-  - tile: {fileID: 3090983312458457553, guid: 709566d02e9e8cf45a5754f1ee1be5d2, type: 3}
+  - tile: {fileID: 3090983312458457553, guid: 8b1c7e2f473699f40b8e93f9227ae357, type: 3}
     bitwiseTileIndexes: e8f70100
-  - tile: {fileID: 3090983312458457553, guid: 1ed2bdc196d06534799dcd96e8ab294b, type: 3}
+  - tile: {fileID: 3090983312458457553, guid: 2af0607ac133e78469814eca0749f760, type: 3}
     bitwiseTileIndexes: b8ff0100
   - tile: {fileID: 3090983312458457553, guid: 9c200931086fdd84db95428bb144e3e5, type: 3}
     bitwiseTileIndexes: 0100000081000000
