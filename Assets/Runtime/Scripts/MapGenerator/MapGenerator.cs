@@ -17,7 +17,7 @@ public class MapGenerator : MonoBehaviour
     [Range(0, 100)]
     [SerializeField] private int grassBorderPercent;    
 
-    private void Awake()
+    public void GenerateMap()
     {
         //Get Map Data
         Tile[,] mapData = MapData.GetMapData(islandWidth, islandHeight, mapWidth, mapHeight, mapSeed, grassBorderPercent);
