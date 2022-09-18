@@ -35,6 +35,14 @@ public class PlayerController : MonoBehaviour
         float inputY = Input.GetAxisRaw("Vertical");
 
         isWalking = (inputX != 0 || inputY != 0);
+        if (Mathf.Abs(inputX) > Mathf.Abs(inputY))
+        {
+            inputY = 0;
+        }
+        else
+        {
+            inputX = 0;
+        }
         movement = new Vector2(inputX, inputY);
     }
 

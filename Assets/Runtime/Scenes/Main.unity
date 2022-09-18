@@ -490,6 +490,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9126379422863574421, guid: cd2ebdacf2c863547b2145e9109cafb1, type: 3}
+      propertyPath: waterResources.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126379422863574421, guid: cd2ebdacf2c863547b2145e9109cafb1, type: 3}
+      propertyPath: waterResources.Array.data[0].resource
+      value: 
+      objectReference: {fileID: 4607107672515160505, guid: 2043a3b49b81e4a47a81fb00d20bbb88, type: 3}
+    - target: {fileID: 9126379422863574421, guid: cd2ebdacf2c863547b2145e9109cafb1, type: 3}
+      propertyPath: waterResources.Array.data[1].resource
+      value: 
+      objectReference: {fileID: 4607107672515160505, guid: 1b546a73bb265c74989d8e52a3c5d0a3, type: 3}
+    - target: {fileID: 9126379422863574421, guid: cd2ebdacf2c863547b2145e9109cafb1, type: 3}
+      propertyPath: waterResources.Array.data[0].resourcePercent
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126379422863574421, guid: cd2ebdacf2c863547b2145e9109cafb1, type: 3}
+      propertyPath: waterResources.Array.data[1].resourcePercent
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 9126379422863574422, guid: cd2ebdacf2c863547b2145e9109cafb1, type: 3}
       propertyPath: m_RootOrder
       value: 1
