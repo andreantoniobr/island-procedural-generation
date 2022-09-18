@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2371905085327840332}
   - component: {fileID: 2371905085327840334}
   - component: {fileID: 2371905085327840335}
+  - component: {fileID: 4164333884911758658}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -188,6 +189,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4164333884911758658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371905085327840333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb0e7edb9bddcf41b42cb54b9f3e073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixEveryFrame: 1
+  spriteRenderer: {fileID: 0}
+  sortingOrderBase: 0
+  offset: -0.5
 --- !u!1 &2371905086158545034
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2371905086158545781}
-  - component: {fileID: 2371905086158545780}
+  - component: {fileID: 2415344795382532472}
   m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
@@ -219,8 +236,8 @@ Transform:
   m_Father: {fileID: 2371905085208994772}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2371905086158545780
-CircleCollider2D:
+--- !u!70 &2415344795382532472
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -232,9 +249,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: -0.5}
+  m_Size: {x: 0.5, y: 0.3}
+  m_Direction: 1
 --- !u!1 &2371905086498584420
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +323,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1161715519
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_Sprite: {fileID: -1803334630922567422, guid: da387aca5f2bb6e4a898d7b7119669b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

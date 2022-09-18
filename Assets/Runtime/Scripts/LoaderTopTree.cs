@@ -4,12 +4,28 @@ using UnityEngine;
 
 public class LoaderTopTree : MonoBehaviour
 {
-    [SerializeField] private GameObject topTree;
-    private void Awake()
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private TopTree topTreeModel;
+    
+    private void Start()
     {
-        if (topTree)
+        InstantiateTopTree();
+    }
+
+    private void InstantiateTopTree()
+    {
+        if (topTreeModel)
         {
-            Instantiate(topTree, transform.parent);
+            TopTree topTree = Instantiate(topTreeModel, transform.parent);
+            SetTopTreeLayer(topTree);
+        }
+    }
+
+    private void SetTopTreeLayer(TopTree topTree)
+    {
+        if (topTree && spriteRenderer)
+        {
+            topTree.SetSpriteRenderersLayer(spriteRenderer.sortingLayerName, spriteRenderer.sortingOrder);
         }
     }
 }

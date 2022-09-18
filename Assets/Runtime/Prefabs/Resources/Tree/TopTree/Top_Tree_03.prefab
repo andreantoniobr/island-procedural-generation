@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4563626875544171740, guid: 164bb798570d6de46a8597e96ff79199, type: 3}
+      propertyPath: spriteRenderers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563626875544171740, guid: 164bb798570d6de46a8597e96ff79199, type: 3}
+      propertyPath: spriteRenderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 8120891009261228974}
+    - target: {fileID: 4563626875544171740, guid: 164bb798570d6de46a8597e96ff79199, type: 3}
+      propertyPath: spriteRenderers.Array.data[1]
+      value: 
+      objectReference: {fileID: 8120891009903742747}
     - target: {fileID: 8052468960450587028, guid: 164bb798570d6de46a8597e96ff79199, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -73,3 +85,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 164bb798570d6de46a8597e96ff79199, type: 3}
+--- !u!212 &8120891009261228974 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8052468960450587028, guid: 164bb798570d6de46a8597e96ff79199, type: 3}
+  m_PrefabInstance: {fileID: 2266206180527962682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8120891009903742747 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8052468961428649249, guid: 164bb798570d6de46a8597e96ff79199, type: 3}
+  m_PrefabInstance: {fileID: 2266206180527962682}
+  m_PrefabAsset: {fileID: 0}

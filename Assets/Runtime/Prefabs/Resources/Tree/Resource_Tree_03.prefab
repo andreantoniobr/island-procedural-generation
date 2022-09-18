@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1063200806181785029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8733719401578706982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb0e7edb9bddcf41b42cb54b9f3e073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixEveryFrame: 0
+  gameObjecsFixQuant: 0
+  sortingOrderBase: 0
+  offset: -0.05
 --- !u!1001 &3894896306467118589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,5 +134,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7793050234676763349, guid: 3c35e4f36092a094ea5b50ec385efead, type: 3}
+      propertyPath: topTreeModel
+      value: 
+      objectReference: {fileID: 2316658859966828262, guid: 07db9ad1983099a438016d48a4acd386, type: 3}
+    - target: {fileID: 7793050234676763349, guid: 3c35e4f36092a094ea5b50ec385efead, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 4053784103566331354}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c35e4f36092a094ea5b50ec385efead, type: 3}
+--- !u!1 &8733719401578706982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3017398388459067249, guid: 3c35e4f36092a094ea5b50ec385efead, type: 3}
+  m_PrefabInstance: {fileID: 5830917270569316183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &4053784103566331354 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7541976277617156749, guid: 3c35e4f36092a094ea5b50ec385efead, type: 3}
+  m_PrefabInstance: {fileID: 5830917270569316183}
+  m_PrefabAsset: {fileID: 0}
